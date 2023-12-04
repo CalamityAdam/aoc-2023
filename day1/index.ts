@@ -98,7 +98,7 @@ function sumCalibrationValues2(lines: string[]): number {
   }, 0);
 }
 
-console.log('sum: ', sumCalibrationValues2(inputValues.split(/\r?\n/)));
+// console.log('sum: ', sumCalibrationValues2(inputValues.split(/\r?\n/)));
 
 export {
   replaceNumbers,
