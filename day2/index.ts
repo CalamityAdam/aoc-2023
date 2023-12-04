@@ -117,6 +117,27 @@ function gameChecker(inputGames: string): number {
   return sum;
 }
 
+// The power of a set of cubes is equal to the numbers of red, green, and blue cubes multiplied together
+function getGamePower(game: Game): number {
+  const redCount = game.cubes.red;
+  const greenCount = game.cubes.green;
+  const blueCount = game.cubes.blue;
+
+  return redCount * greenCount * blueCount;
+}
+
+function sumGamePowers(inputGames: string): number {
+  const games = inputGames.split(/\r?\n/);
+  let sum = 0;
+
+  games.forEach((game) => {
+    const newGame = buildGame(game);
+    sum += getGamePower(newGame);
+  });
+
+  return sum;
+}
+
 const game1 = 'Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green';
 
 const gameSet = `Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green
@@ -127,6 +148,6 @@ Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green`;
 
 // console.log(gameChecker(gameSet));
 
-// console.log(gameChecker(inputValues));
+// console.log(sumGamePowers(inputValues));
 
-export { buildGame, gameChecker, isPossible };
+export { buildGame, gameChecker, getGamePower, isPossible, sumGamePowers };
