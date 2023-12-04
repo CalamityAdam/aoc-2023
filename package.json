@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "add:day": "node scripts/addDay.js",
     "start:day1": "nodemon --exec ts-node day1/index.ts",
     "start:day2": "nodemon --exec ts-node day2/index.ts",
     "test": "jest",
