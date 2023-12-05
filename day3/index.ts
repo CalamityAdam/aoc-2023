@@ -139,7 +139,7 @@ function isValid(arr: string[], x: number, y: number): boolean {
     arr[y + 1]?.[x + 1],
   ];
 
-  const regex = /[~!@#$%^&*()_+\-=`]/;
+  const regex = /[+\*=\-&#\/%$@]/;
   const isValid = checks.some((char: string) => char && regex.test(char));
   return isValid;
 }
@@ -148,7 +148,7 @@ export { gearRatios };
 
 function solveDay3() {
   const input = readFileSync(`${__dirname}/input.txt`, 'utf8');
-  const lines = input.split('\n');
+  const lines = input.split('\n').filter((line) => line.length > 0);
   const sum = gearRatios(lines);
 
   console.log('sum: ', sum);
