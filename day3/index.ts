@@ -53,7 +53,6 @@ function findAdjacentPartNumbers(
     }
   }
 
-  console.log(partNumbers);
   if (partNumbers.length === 2) {
     return [partNumbers[0], partNumbers[1]];
   }
